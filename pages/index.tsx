@@ -39,9 +39,11 @@ export default function Home() {
     <>
       <Header />
 
-      {ready ? astroid.map((value: any) => renderCard(value, value.id)): 
-        <div>loading...</div>
-      }
+      <div className="grid lg:grid-cols-3 p-3 gap-10 mx-10">
+        {ready ? astroid.map((value: any) => renderCard(value, value.id)): 
+          <div className="text-white text-lg">Loading Meteor Data...</div>
+        }
+      </div>
 
       <p>
         {/* {API_KEY}
